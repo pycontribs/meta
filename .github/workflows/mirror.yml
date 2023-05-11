@@ -1,0 +1,32 @@
+name: mirror
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # every day at midnight
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    environment: mirror
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 2
+        uses: actions/setup-python@v4
+        with:
+          python-version: 2.7
+
+      - name: mirror ruamel-yaml
+        uses: "mozillazg/mirror-hg-repo@v1"
+        with:
+          source-hg-repo-url: "http://hg.code.sf.net/p/ruamel-yaml/code"
+          destination-git-repo-owner: "pycontribs"
+          destination-git-repo-name: "ruamel-yaml"
+          destination-git-personal-token: "${{ secrets.PERSONAL_GIT_TOKEN }}"
+
+      - name: mirror ruamel-yaml-clib
+        uses: "mozillazg/mirror-hg-repo@v1"
+        with:
+          source-hg-repo-url: "http://hg.code.sf.net/p/ruamel-yaml-clib/code"
+          destination-git-repo-owner: "pycontribs"
+          destination-git-repo-name: "ruamel-yaml-clib"
+          destination-git-personal-token: "${{ secrets.PERSONAL_GIT_TOKEN }}"
