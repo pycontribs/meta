@@ -12,7 +12,7 @@ Anyone is welcomed to make a pull-request to propose a new entries.
 ```yaml
 aliases:
   type: kind
-# theese are known reserved words for which we did not pick an alias yet
+# these are known reserved words for which we did not pick an alias yet
 keywords: |
   False
   None

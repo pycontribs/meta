@@ -13,10 +13,10 @@ jobs:
       - name: Set up Python 2
         uses: actions/setup-python@v4
         with:
-          python-version: 2.7
+          python-version: "3.10"
 
       - name: mirror ruamel-yaml
-        uses: "mozillazg/mirror-hg-repo@v1"
+        uses: "mozillazg/mirror-hg-repo@v2"
         with:
           source-hg-repo-url: "http://hg.code.sf.net/p/ruamel-yaml/code"
           destination-git-repo-owner: "pycontribs"
@@ -24,7 +24,7 @@ jobs:
           destination-git-personal-token: "${{ secrets.PERSONAL_GIT_TOKEN }}"
 
       - name: mirror ruamel-yaml-clib
-        uses: "mozillazg/mirror-hg-repo@v1"
+        uses: "mozillazg/mirror-hg-repo@v2"
         with:
           source-hg-repo-url: "http://hg.code.sf.net/p/ruamel-yaml-clib/code"
           destination-git-repo-owner: "pycontribs"
