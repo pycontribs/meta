@@ -37,6 +37,7 @@ keywords: |
   in
   is
   lambda
+  map
   nonlocal
   not
   or
