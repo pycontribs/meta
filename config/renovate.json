@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "automerge": true,
+  "automergeStrategy": "squash",
+  "branchTopic": "all",
+  "commitMessageAction": "update",
+  "commitMessageExtra": "",
+  "commitMessageTopic": "dependencies",
+  "configMigration": true,
+  "dependencyDashboard": true,
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    ":enablePreCommit",
+    "schedule:automergeEarlyMondays"
+  ],
+  "github-actions": {
+    "branchTopic": "all",
+    "enabled": true,
+    "packageRules": [
+      {
+        "matchPackageNames": [
+          "*",
+          "!/ansible/team-devtools/",
+          "!/Actions-R-Us/actions-tagger/"
+        ]
+      }
+    ]
+  },
+  "groupName": "all dependencies",
+  "groupSlug": "all",
+  "labels": ["chore", "dependencies"],
+  "lockFileMaintenance": {
+    "commitMessageAction": "update",
+    "enabled": true,
+    "groupName": "all dependencies",
+    "groupSlug": "all",
+    "rangeStrategy": "update-lockfile",
+    "rebaseWhen": "behind-base-branch",
+    "recreateWhen": "always"
+  },
+  "packageRules": [
+    {
+      "branchTopic": "all",
+      "groupName": "all dependencies",
+      "groupSlug": "all",
+      "matchPackageNames": ["*"],
+      "minimumReleaseAge": "2 days"
+    }
+  ],
+  "pin": {
+    "branchTopic": "all",
+    "groupName": "all dependencies",
+    "groupSlug": "all"
+  },
+  "pinDigest": {
+    "branchTopic": "all",
+    "groupName": "all dependencies",
+    "groupSlug": "all"
+  },
+  "prConcurrentLimit": 1,
+  "rangeStrategy": "update-lockfile",
+  "recreateWhen": "always",
+  "separateMajorMinor": false,
+  "separateMinorPatch": false
+}
