@@ -18,7 +18,7 @@ repos:
         alias: renovate
         args: [--strict]
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v2.3.11"
+    rev: "v2.3.12"
     hooks:
       - id: biome-check
         name: biome
