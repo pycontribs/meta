@@ -12,13 +12,13 @@ ci:
     - renovate-config-validator # container limits
 repos:
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 44.181.0
+    rev: 44.181.6
     hooks:
       - id: renovate-config-validator
         alias: renovate
         args: [--strict]
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v2.6.2"
+    rev: "v2.6.3"
     hooks:
       - id: biome-check
         name: biome
